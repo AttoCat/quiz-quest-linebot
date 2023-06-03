@@ -105,5 +105,3 @@ export const composeHintMessage = (
   carousel.contents[0].footer.contents.push(footer);
   return carousel;
 };
-
-console.log(JSON.stringify(composeHintMessage(16, null)));

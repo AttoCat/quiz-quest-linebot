@@ -1,0 +1,11 @@
+{
+  "type": "bubble",
+  "size": "micro",
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [],
+    "paddingTop": "0px",
+    "paddingBottom": "0px"
+  }
+}

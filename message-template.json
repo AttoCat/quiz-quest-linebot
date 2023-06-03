@@ -1,0 +1,36 @@
+{
+  "type": "carousel",
+  "contents": [
+    {
+      "type": "bubble",
+      "size": "micro",
+      "header": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "text",
+            "text": "公開済ヒント一覧",
+            "weight": "bold",
+            "size": "md",
+            "wrap": true
+          }
+        ],
+        "paddingBottom": "none"
+      },
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [],
+        "spacing": "none",
+        "paddingAll": "13px",
+        "paddingBottom": "0px"
+      },
+      "footer": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": []
+      }
+    }
+  ]
+}
