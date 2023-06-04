@@ -10,17 +10,17 @@ const HINT_LABELS = "ABCDEFGHIJKLMN".split("").concat([
   "最後の謎Y",
 ]);
 const TEMPLATE_CAROUSEL: FlexCarouselMessage = JSON.parse(
-  await Deno.readTextFile("./message-template.json"),
+  await Deno.readTextFile("./templates/message-template.json"),
 );
 const TEMPLATE_EXTRA_BUBBLE: FlexMessageBubble = JSON.parse(
-  await Deno.readTextFile("./bubble-template.json"),
+  await Deno.readTextFile("./templates/bubble-template.json"),
 );
 type milliseconds = number;
 type numberOfHints = number;
 
 export const getAvailableHints = (
   currentTime: string,
-  timeTable: string[] = Deno.env.get("HINTS")!.split(" "),
+  timeTable: string[],
 ): [numberOfHints, milliseconds | null] => {
   const UnixCurrentTime: milliseconds = Date.parse(currentTime);
   const UnixTimeTable: milliseconds[] = timeTable.map((time) =>
@@ -104,4 +104,25 @@ export const composeHintMessage = (
   };
   carousel.contents[0].footer.contents.push(footer);
   return carousel;
+};
+
+export const replyHintsMessage = async (
+  currentTime: Date,
+  channelAccessToken: string,
+  replyToken: string,
+  hintTimeTable: string[],
+) => {
+  const [availableHints, nextMilliSeconds] = getAvailableHints(
+    currentTime.toISOString(),
+    hintTimeTable,
+  );
+  const hintsMessage = composeHintMessage(availableHints, nextMilliSeconds);
+  await fetch("https://api.line.me/v2/bot/message/reply", {
+    method: "POST",
+    body: JSON.stringify({ replyToken: replyToken, messages: [hintsMessage] }),
+    headers: {
+      Authorization: `Bearer ${channelAccessToken}`,
+      "Content-Type": "application/json",
+    },
+  });
 };

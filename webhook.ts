@@ -1,8 +1,11 @@
 import { Hono } from "./deps.ts";
+import { replyHintsMessage } from "./hints.ts";
 import { hmac } from "./hmac.ts";
 import { MessageEvent, Webhook } from "./types.ts";
 export const webhook = new Hono();
 const CHANNEL_SECRET = Deno.env.get("CHANNEL_SECRET");
+const CHANNEL_ACCESS_TOKEN = Deno.env.get("ACCESS_TOKEN");
+const HINT_TIMETABLE = Deno.env.get("HINT_TIMETABLE")!.split(" ");
 
 webhook.post("*", async (c) => {
   const body = await c.req.json<Webhook>();
@@ -17,8 +20,14 @@ webhook.post("*", async (c) => {
   ) as MessageEvent[];
   for (const messageEvent of messageEvents) {
     if (messageEvent.message.type !== "text") continue;
-    if (messageEvent.message.text !== "#ヒント") continue;
-    console.log(Deno.env.get("HINTS")!.split(" ")[0]);
+    if (messageEvent.message.text === "#ヒント") {
+      await replyHintsMessage(
+        new Date(),
+        CHANNEL_ACCESS_TOKEN!,
+        messageEvent.replyToken,
+        HINT_TIMETABLE,
+      );
+    }
     console.log("Get right request");
   }
 });
