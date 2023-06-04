@@ -5,7 +5,7 @@ import { MessageEvent, Webhook } from "./types.ts";
 export const webhook = new Hono();
 const CHANNEL_SECRET = Deno.env.get("CHANNEL_SECRET");
 const CHANNEL_ACCESS_TOKEN = Deno.env.get("ACCESS_TOKEN");
-const HINT_TIMETABLE = Deno.env.get("HINT_TIMETABLE")!.split(" ");
+const HINT_TIMETABLE = Deno.env.get("HINTS_TIMETABLE")!.split(" ");
 
 webhook.post("*", async (c) => {
   const body = await c.req.json<Webhook>();
