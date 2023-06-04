@@ -103,7 +103,7 @@ export const composeHintMessage = (
     size: "xxs",
   };
   carousel.contents[0].footer.contents.push(footer);
-  return carousel;
+  return { type: "flex", altText: "ヒント一覧", contents: [carousel] };
 };
 
 export const replyHintsMessage = async (
