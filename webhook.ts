@@ -22,12 +22,11 @@ webhook.post("*", async (c) => {
     if (messageEvent.message.type !== "text") continue;
     if (messageEvent.message.text === "#ヒント") {
       await replyHintsMessage(
-        new Date(),
+        (new Date()).toISOString(),
         CHANNEL_ACCESS_TOKEN!,
         messageEvent.replyToken,
         HINT_TIMETABLE,
       );
-      console.log("Get right request");
     }
   }
 });

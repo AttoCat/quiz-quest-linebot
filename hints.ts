@@ -26,8 +26,6 @@ export const getAvailableHints = (
   const UnixTimeTable: milliseconds[] = timeTable.map((time) =>
     Date.parse(time)
   );
-  console.log(UnixTimeTable);
-  console.log(UnixCurrentTime);
   for (const [index, time] of UnixTimeTable.entries()) {
     if (UnixCurrentTime < time) return [index, time];
   }
@@ -112,19 +110,17 @@ export const composeHintMessage = (
 };
 
 export const replyHintsMessage = async (
-  currentTime: Date,
+  currentTime: string,
   channelAccessToken: string,
   replyToken: string,
   hintTimeTable: string[],
 ) => {
   const [availableHints, nextMilliSeconds] = getAvailableHints(
-    currentTime.toISOString(),
+    currentTime,
     hintTimeTable,
   );
-  console.log(channelAccessToken, replyToken, hintTimeTable);
   const hintsMessage = composeHintMessage(availableHints, nextMilliSeconds);
-  console.log(JSON.stringify(hintsMessage));
-  const result = await fetch("https://api.line.me/v2/bot/message/reply", {
+  await fetch("https://api.line.me/v2/bot/message/reply", {
     method: "POST",
     body: JSON.stringify({ replyToken: replyToken, messages: [hintsMessage] }),
     headers: {
@@ -132,5 +128,4 @@ export const replyHintsMessage = async (
       "Content-Type": "application/json",
     },
   });
-  console.log(JSON.stringify(await result.json()));
 };
