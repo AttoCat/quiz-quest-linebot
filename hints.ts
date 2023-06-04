@@ -26,8 +26,10 @@ export const getAvailableHints = (
   const UnixTimeTable: milliseconds[] = timeTable.map((time) =>
     Date.parse(time)
   );
+  console.log(UnixTimeTable);
+  console.log(UnixCurrentTime);
   for (const [index, time] of UnixTimeTable.entries()) {
-    if (UnixCurrentTime <= time) return [index + 1, time];
+    if (UnixCurrentTime < time) return [index, time];
   }
   return [timeTable.length, null];
 };
