@@ -27,7 +27,7 @@ webhook.post("*", async (c) => {
         messageEvent.replyToken,
         HINT_TIMETABLE,
       );
+      console.log("Get right request");
     }
-    console.log("Get right request");
   }
 });
