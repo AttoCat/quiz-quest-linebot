@@ -6,8 +6,8 @@ import {
 } from "./types.ts";
 
 const HINT_LABELS = "ABCDEFGHIJKLMN".split("").concat([
-  "最後の謎X",
-  "最後の謎Y",
+  "文書X",
+  "文書Y",
 ]);
 const TEMPLATE_CAROUSEL: FlexCarouselMessage = JSON.parse(
   await Deno.readTextFile("./templates/message-template.json"),
