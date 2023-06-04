@@ -96,8 +96,11 @@ export const composeHintMessage = (
     });
   }
   const nextTimeText = (nextMilliSeconds === null) ? " " : format(
-    new Date(nextMilliSeconds),
-    "次の更新: HH:MM(20分毎)",
+    new Date(
+      nextMilliSeconds +
+        ((new Date().getTimezoneOffset() + (9 * 60)) * 60 * 1000),
+    ),
+    "次の更新: HH:mm(20分毎)",
   );
   const footer: FlexMessageContent = {
     type: "text",
