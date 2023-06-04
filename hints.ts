@@ -116,9 +116,9 @@ export const replyHintsMessage = async (
     currentTime.toISOString(),
     hintTimeTable,
   );
-  console.log(new Date(nextMilliSeconds!));
+  console.log(channelAccessToken, replyToken, hintTimeTable);
   const hintsMessage = composeHintMessage(availableHints, nextMilliSeconds);
-  console.log(hintsMessage);
+  console.log(JSON.stringify(hintsMessage));
   await fetch("https://api.line.me/v2/bot/message/reply", {
     method: "POST",
     body: JSON.stringify({ replyToken: replyToken, messages: [hintsMessage] }),
