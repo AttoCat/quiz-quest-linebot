@@ -27,7 +27,7 @@ export const getAvailableHints = (
     Date.parse(time)
   );
   for (const [index, time] of UnixTimeTable.entries()) {
-    if (UnixCurrentTime >= time) return [index + 1, time];
+    if (UnixCurrentTime <= time) return [index + 1, time];
   }
   return [timeTable.length, null];
 };
