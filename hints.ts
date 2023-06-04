@@ -52,7 +52,7 @@ export const composeHintMessage = (
     JSON.stringify(TEMPLATE_CAROUSEL),
   );
   const currentHintsText = (availableHints === 16)
-    ? "すべてのヒントが"
+    ? "すべて"
     : `現在${availableHints}個`;
   carousel.contents[0].body.contents.push({
     type: "box",

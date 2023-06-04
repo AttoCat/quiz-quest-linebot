@@ -2,10 +2,12 @@ import { Hono } from "./deps.ts";
 import { replyHintsMessage } from "./hints.ts";
 import { hmac } from "./hmac.ts";
 import { MessageEvent, Webhook } from "./types.ts";
-export const webhook = new Hono();
+
 const CHANNEL_SECRET = Deno.env.get("CHANNEL_SECRET");
 const CHANNEL_ACCESS_TOKEN = Deno.env.get("CHANNEL_ACCESS_TOKEN");
 const HINT_TIMETABLE = Deno.env.get("HINTS_TIMETABLE")!.split(" ");
+
+export const webhook = new Hono();
 
 webhook.post("*", async (c) => {
   const body = await c.req.json<Webhook>();
