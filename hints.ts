@@ -119,12 +119,13 @@ export const replyHintsMessage = async (
   console.log(channelAccessToken, replyToken, hintTimeTable);
   const hintsMessage = composeHintMessage(availableHints, nextMilliSeconds);
   console.log(JSON.stringify(hintsMessage));
-  await fetch("https://api.line.me/v2/bot/message/reply", {
+  const result = await fetch("https://api.line.me/v2/bot/message/reply", {
     method: "POST",
     body: JSON.stringify({ replyToken: replyToken, messages: [hintsMessage] }),
     headers: {
-      Authorization: `Bearer ${channelAccessToken}`,
+      "Authorization": `Bearer ${channelAccessToken}`,
       "Content-Type": "application/json",
     },
   });
+  console.log(JSON.stringify(await result.json()));
 };
