@@ -1,4 +1,7 @@
-export interface FlexCarouselMessage {
+export interface BaseMessage {
+  type: string;
+}
+export interface FlexCarouselMessage extends BaseMessage {
   type: "carousel";
   contents: FlexMessageBubble[];
 }

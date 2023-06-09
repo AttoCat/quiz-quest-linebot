@@ -9,32 +9,35 @@ const HINT_LABELS = "ABCDEFGHIJKLMN".split("").concat([
   "文書X",
   "文書Y",
 ]);
-const TEMPLATE_CAROUSEL: FlexCarouselMessage = JSON.parse(
-  await Deno.readTextFile("./templates/message-template.json"),
-);
-const TEMPLATE_EXTRA_BUBBLE: FlexMessageBubble = JSON.parse(
-  await Deno.readTextFile("./templates/bubble-template.json"),
-);
+
+const getTemplateCarousel = async (): Promise<
+  FlexCarouselMessage
+> => JSON.parse(await Deno.readTextFile("./templates/hint-template.json"));
+
+const getTemplateExtraBubble = async (): Promise<FlexMessageBubble> =>
+  JSON.parse(await Deno.readTextFile("./templates/bubble-template.json"));
+
 type milliseconds = number;
 type numberOfHints = number;
+type isoDatetime = string;
 
 export const getAvailableHints = (
-  currentTime: string,
-  timeTable: string[],
-): [numberOfHints, milliseconds | null] => {
-  const UnixCurrentTime: milliseconds = Date.parse(currentTime);
-  const UnixTimeTable: milliseconds[] = timeTable.map((time) =>
+  currentDatetime: isoDatetime,
+  timeTable: isoDatetime[],
+): [numberOfHints, milliseconds | undefined] => {
+  const unixCurrentDatetime: milliseconds = Date.parse(currentDatetime);
+  const unixTimeTable: milliseconds[] = timeTable.map((time) =>
     Date.parse(time)
   );
-  for (const [index, time] of UnixTimeTable.entries()) {
-    if (UnixCurrentTime < time) return [index, time];
+  for (const [index, time] of unixTimeTable.entries()) {
+    if (unixCurrentDatetime < time) return [index, time];
   }
-  return [timeTable.length, null];
+  return [timeTable.length, undefined];
 };
 
-export const composeHintMessage = (
-  availableHints: number,
-  nextMilliSeconds: milliseconds | null,
+export const composeHintMessage = async (
+  availableHints: numberOfHints,
+  nextMilliSeconds: milliseconds | undefined,
 ) => {
   const buttons: FlexMessageContent[] = [...Array(availableHints).keys()].map(
     (n) => {
@@ -48,10 +51,8 @@ export const composeHintMessage = (
       };
     },
   );
-  const carousel: FlexCarouselMessage = JSON.parse(
-    JSON.stringify(TEMPLATE_CAROUSEL),
-  );
-  const currentHintsText = (availableHints === 16)
+  const carousel: FlexCarouselMessage = await getTemplateCarousel();
+  const currentHintsText = (availableHints == 16)
     ? "すべて"
     : `現在${availableHints}個`;
   carousel.contents[0].body.contents.push({
@@ -74,9 +75,7 @@ export const composeHintMessage = (
     });
   }
   if (availableHints >= 5) {
-    carousel.contents.push(JSON.parse(
-      JSON.stringify(TEMPLATE_EXTRA_BUBBLE),
-    ));
+    carousel.contents.push(await getTemplateExtraBubble());
     carousel.contents[1].body.contents.push({
       type: "box",
       layout: "vertical",
@@ -84,16 +83,14 @@ export const composeHintMessage = (
     });
   }
   if (availableHints >= 11) {
-    carousel.contents.push(JSON.parse(
-      JSON.stringify(TEMPLATE_EXTRA_BUBBLE),
-    ));
+    carousel.contents.push(await getTemplateExtraBubble());
     carousel.contents[2].body.contents.push({
       type: "box",
       layout: "vertical",
       contents: buttons.slice(10, 16),
     });
   }
-  const nextTimeText = (nextMilliSeconds === null) ? " " : format(
+  const nextTimeText = (nextMilliSeconds === undefined) ? " " : format(
     new Date(
       nextMilliSeconds +
         ((new Date().getTimezoneOffset() + (9 * 60)) * 60 * 1000),
@@ -107,25 +104,4 @@ export const composeHintMessage = (
   };
   carousel.contents[0].footer.contents.push(footer);
   return { type: "flex", altText: "ヒント一覧", contents: carousel };
-};
-
-export const replyHintsMessage = async (
-  currentTime: string,
-  channelAccessToken: string,
-  replyToken: string,
-  hintTimeTable: string[],
-) => {
-  const [availableHints, nextMilliSeconds] = getAvailableHints(
-    currentTime,
-    hintTimeTable,
-  );
-  const hintsMessage = composeHintMessage(availableHints, nextMilliSeconds);
-  await fetch("https://api.line.me/v2/bot/message/reply", {
-    method: "POST",
-    body: JSON.stringify({ replyToken: replyToken, messages: [hintsMessage] }),
-    headers: {
-      "Authorization": `Bearer ${channelAccessToken}`,
-      "Content-Type": "application/json",
-    },
-  });
 };
