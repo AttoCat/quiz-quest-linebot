@@ -7,7 +7,8 @@ import { MessageEvent, Webhook, WebhookEvent } from "./types.ts";
 const CHANNEL_SECRET = Deno.env.get("CHANNEL_SECRET");
 const CHANNEL_ACCESS_TOKEN = Deno.env.get("CHANNEL_ACCESS_TOKEN");
 const HINT_TIMETABLE = Deno.env.get("HINTS_TIMETABLE")!.split(" ");
-
+const FINAL_ANSWERS = Deno.env.get("FINAL_ANSWERS")!.split(" ");
+const CELEBRATE_IMAGE = Deno.env.get("CELEBRATE_IMAGE");
 export const webhook = new Hono();
 
 const isMessageEvent = (event: WebhookEvent): event is MessageEvent =>
@@ -38,6 +39,22 @@ webhook.post("*", async (c) => {
         CHANNEL_ACCESS_TOKEN!,
         messageEvent.replyToken,
         [hintMessage],
+      );
+      continue;
+    }
+    if (
+      messageEvent.message.text.includes(FINAL_ANSWERS![0]) &&
+      messageEvent.message.text.includes(FINAL_ANSWERS![1])
+    ) {
+      const celebrateMessage = {
+        type: "image",
+        originalContentUrl: CELEBRATE_IMAGE!,
+        previewImageUrl: CELEBRATE_IMAGE!,
+      };
+      await replyMessage(
+        CHANNEL_ACCESS_TOKEN!,
+        messageEvent.replyToken,
+        [celebrateMessage],
       );
     }
   }
