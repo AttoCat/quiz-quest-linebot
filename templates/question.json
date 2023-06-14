@@ -33,8 +33,8 @@
                   "type": "button",
                   "action": {
                     "type": "message",
-                    "label": "文書",
-                    "text": "#文書"
+                    "label": "台紙",
+                    "text": "#台紙"
                   }
                 },
                 {
