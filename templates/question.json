@@ -6,7 +6,7 @@
     "contents": [
       {
         "type": "bubble",
-        "size": "micro",
+        "size": "nano",
         "header": {
           "type": "box",
           "layout": "vertical",
@@ -79,7 +79,7 @@
       },
       {
         "type": "bubble",
-        "size": "micro",
+        "size": "nano",
         "body": {
           "type": "box",
           "layout": "vertical",
@@ -139,7 +139,7 @@
       },
       {
         "type": "bubble",
-        "size": "micro",
+        "size": "nano",
         "body": {
           "type": "box",
           "layout": "vertical",
