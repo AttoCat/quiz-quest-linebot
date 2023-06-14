@@ -2,7 +2,7 @@ export interface BaseMessage {
   type: string;
 }
 
-export interface FlexCarouselMessage extends BaseMessage {
+export interface FlexCarouselMessage {
   type: "carousel";
   contents: FlexMessageBubble[];
 }
@@ -67,15 +67,15 @@ export interface MessageEvent extends WebhookEvent {
   type: "message";
   replyToken: string;
   message:
-    | TextMessage
-    | ImageMessage
-    | VideoMessage
-    | AudioMessage
-    | FileMessage
-    | LocationMessage;
+    | TextEventMessage
+    | ImageEventMessage
+    | VideoEventMessage
+    | AudioEventMessage
+    | FileEventMessage
+    | LocationEventMessage;
 }
 
-export interface TextMessage {
+export interface TextEventMessage {
   id: string;
   type: "text";
   text: string;
@@ -89,7 +89,7 @@ export interface TextMessage {
   };
 }
 
-interface ImageMessage {
+interface ImageEventMessage {
   id: string;
   type: "image";
   contentProvider: {
@@ -100,23 +100,24 @@ interface ImageMessage {
   imageSet: { id: string; index: number; total: number };
 }
 
-interface VideoMessage extends Omit<ImageMessage, "type" | "imageSet"> {
+interface VideoEventMessage
+  extends Omit<ImageEventMessage, "type" | "imageSet"> {
   type: "video";
   duration?: number;
 }
 
-interface AudioMessage extends Omit<VideoMessage, "type"> {
+interface AudioEventMessage extends Omit<VideoEventMessage, "type"> {
   type: "audio";
 }
 
-interface FileMessage {
+interface FileEventMessage {
   id: string;
   type: "file";
   fileName: string;
   fileSize: number;
 }
 
-interface LocationMessage {
+interface LocationEventMessage {
   id: string;
   type: "location";
   title?: string;
