@@ -44,7 +44,7 @@ webhook.post("*", async (c) => {
       );
       continue;
     }
-    if (messageEvent.message.text === "#ヒント") {
+    if (messageEvent.message.text === "#問題") {
       if (!isQuestionsAvailable(currentDatetime, QUESTION_OPEN_TIME!)) continue;
       await replyMessage(CHANNEL_ACCESS_TOKEN!, messageEvent.replyToken, [
         JSON.parse(await Deno.readTextFile("./templates/question.json")),
