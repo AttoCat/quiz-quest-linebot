@@ -1,198 +1,202 @@
 {
-  "type": "carousel",
-  "contents": [
-    {
-      "type": "bubble",
-      "size": "micro",
-      "header": {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "text",
-            "text": "問題一覧",
-            "weight": "bold",
-            "size": "md",
-            "wrap": true
-          }
-        ],
-        "paddingBottom": "none"
+  "type": "flex",
+  "altText": "問題一覧",
+  "contents": {
+    "type": "carousel",
+    "contents": [
+      {
+        "type": "bubble",
+        "size": "micro",
+        "header": {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "text",
+              "text": "問題一覧",
+              "weight": "bold",
+              "size": "md",
+              "wrap": true
+            }
+          ],
+          "paddingBottom": "none"
+        },
+        "body": {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "box",
+              "layout": "vertical",
+              "contents": [
+                {
+                  "type": "button",
+                  "action": {
+                    "type": "message",
+                    "label": "文書",
+                    "text": "#文書"
+                  }
+                },
+                {
+                  "type": "button",
+                  "action": {
+                    "type": "message",
+                    "label": "問題A",
+                    "text": "#問題A"
+                  }
+                },
+                {
+                  "type": "button",
+                  "action": {
+                    "type": "message",
+                    "label": "問題B",
+                    "text": "#問題B"
+                  }
+                },
+                {
+                  "type": "button",
+                  "action": {
+                    "type": "message",
+                    "label": "問題C",
+                    "text": "#問題C"
+                  }
+                },
+                {
+                  "type": "button",
+                  "action": {
+                    "type": "message",
+                    "label": "問題D",
+                    "text": "#問題D"
+                  }
+                }
+              ]
+            }
+          ],
+          "spacing": "none",
+          "paddingAll": "0px",
+          "paddingBottom": "0px"
+        }
       },
-      "body": {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
-              {
-                "type": "button",
-                "action": {
-                  "type": "message",
-                  "label": "文書",
-                  "text": "#文書"
+      {
+        "type": "bubble",
+        "size": "micro",
+        "body": {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "box",
+              "layout": "vertical",
+              "contents": [
+                {
+                  "type": "button",
+                  "action": {
+                    "type": "message",
+                    "label": "問題E",
+                    "text": "#問題E"
+                  }
+                },
+                {
+                  "type": "button",
+                  "action": {
+                    "type": "message",
+                    "label": "問題F",
+                    "text": "#問題F"
+                  }
+                },
+                {
+                  "type": "button",
+                  "action": {
+                    "type": "message",
+                    "label": "問題G",
+                    "text": "#問題G"
+                  }
+                },
+                {
+                  "type": "button",
+                  "action": {
+                    "type": "message",
+                    "label": "問題H",
+                    "text": "#問題H"
+                  }
+                },
+                {
+                  "type": "button",
+                  "action": {
+                    "type": "message",
+                    "label": "問題I",
+                    "text": "#問題I"
+                  }
                 }
-              },
-              {
-                "type": "button",
-                "action": {
-                  "type": "message",
-                  "label": "問題A",
-                  "text": "#問題A"
+              ]
+            }
+          ],
+          "spacing": "none",
+          "paddingAll": "0px",
+          "paddingBottom": "0px",
+          "paddingTop": "31px"
+        }
+      },
+      {
+        "type": "bubble",
+        "size": "micro",
+        "body": {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "box",
+              "layout": "vertical",
+              "contents": [
+                {
+                  "type": "button",
+                  "action": {
+                    "type": "message",
+                    "label": "問題J",
+                    "text": "#問題J"
+                  }
+                },
+                {
+                  "type": "button",
+                  "action": {
+                    "type": "message",
+                    "label": "問題K",
+                    "text": "#問題K"
+                  }
+                },
+                {
+                  "type": "button",
+                  "action": {
+                    "type": "message",
+                    "label": "問題L",
+                    "text": "#問題L"
+                  }
+                },
+                {
+                  "type": "button",
+                  "action": {
+                    "type": "message",
+                    "label": "問題M",
+                    "text": "#問題M"
+                  }
+                },
+                {
+                  "type": "button",
+                  "action": {
+                    "type": "message",
+                    "label": "問題N",
+                    "text": "#問題N"
+                  }
                 }
-              },
-              {
-                "type": "button",
-                "action": {
-                  "type": "message",
-                  "label": "問題B",
-                  "text": "#問題B"
-                }
-              },
-              {
-                "type": "button",
-                "action": {
-                  "type": "message",
-                  "label": "問題C",
-                  "text": "#問題C"
-                }
-              },
-              {
-                "type": "button",
-                "action": {
-                  "type": "message",
-                  "label": "問題D",
-                  "text": "#問題D"
-                }
-              }
-            ]
-          }
-        ],
-        "spacing": "none",
-        "paddingAll": "0px",
-        "paddingBottom": "0px"
+              ]
+            }
+          ],
+          "spacing": "none",
+          "paddingAll": "0px",
+          "paddingBottom": "0px",
+          "paddingTop": "31px"
+        }
       }
-    },
-    {
-      "type": "bubble",
-      "size": "micro",
-      "body": {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
-              {
-                "type": "button",
-                "action": {
-                  "type": "message",
-                  "label": "問題E",
-                  "text": "#問題E"
-                }
-              },
-              {
-                "type": "button",
-                "action": {
-                  "type": "message",
-                  "label": "問題F",
-                  "text": "#問題F"
-                }
-              },
-              {
-                "type": "button",
-                "action": {
-                  "type": "message",
-                  "label": "問題G",
-                  "text": "#問題G"
-                }
-              },
-              {
-                "type": "button",
-                "action": {
-                  "type": "message",
-                  "label": "問題H",
-                  "text": "#問題H"
-                }
-              },
-              {
-                "type": "button",
-                "action": {
-                  "type": "message",
-                  "label": "問題I",
-                  "text": "#問題I"
-                }
-              }
-            ]
-          }
-        ],
-        "spacing": "none",
-        "paddingAll": "0px",
-        "paddingBottom": "0px",
-        "paddingTop": "31px"
-      }
-    },
-    {
-      "type": "bubble",
-      "size": "micro",
-      "body": {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
-              {
-                "type": "button",
-                "action": {
-                  "type": "message",
-                  "label": "問題J",
-                  "text": "#問題J"
-                }
-              },
-              {
-                "type": "button",
-                "action": {
-                  "type": "message",
-                  "label": "問題K",
-                  "text": "#問題K"
-                }
-              },
-              {
-                "type": "button",
-                "action": {
-                  "type": "message",
-                  "label": "問題L",
-                  "text": "#問題L"
-                }
-              },
-              {
-                "type": "button",
-                "action": {
-                  "type": "message",
-                  "label": "問題M",
-                  "text": "#問題M"
-                }
-              },
-              {
-                "type": "button",
-                "action": {
-                  "type": "message",
-                  "label": "問題N",
-                  "text": "#問題N"
-                }
-              }
-            ]
-          }
-        ],
-        "spacing": "none",
-        "paddingAll": "0px",
-        "paddingBottom": "0px",
-        "paddingTop": "31px"
-      }
-    }
-  ]
+    ]
+  }
 }
