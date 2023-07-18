@@ -6,7 +6,7 @@
     "contents": [
       {
         "type": "bubble",
-        "size": "nano",
+        "size": "micro",
         "header": {
           "type": "box",
           "layout": "vertical",
@@ -41,7 +41,7 @@
                   "type": "button",
                   "action": {
                     "type": "message",
-                    "label": "解答・解説A",
+                    "label": "解説A",
                     "text": "#解答・解説A"
                   }
                 },
@@ -49,7 +49,7 @@
                   "type": "button",
                   "action": {
                     "type": "message",
-                    "label": "解答・解説B",
+                    "label": "解説B",
                     "text": "#解答・解説B"
                   }
                 },
@@ -57,7 +57,7 @@
                   "type": "button",
                   "action": {
                     "type": "message",
-                    "label": "解答・解説C",
+                    "label": "解説C",
                     "text": "#解答C"
                   }
                 },
@@ -65,7 +65,7 @@
                   "type": "button",
                   "action": {
                     "type": "message",
-                    "label": "解答解説D",
+                    "label": "解説D",
                     "text": "#解答・解説D"
                   }
                 },
@@ -73,7 +73,7 @@
                   "type": "button",
                   "action": {
                     "type": "message",
-                    "label": "解答・解説E",
+                    "label": "解説E",
                     "text": "#解答・解説E"
                   }
                 }
@@ -87,7 +87,7 @@
       },
       {
         "type": "bubble",
-        "size": "nano",
+        "size": "micro",
         "body": {
           "type": "box",
           "layout": "vertical",
@@ -100,7 +100,7 @@
                   "type": "button",
                   "action": {
                     "type": "message",
-                    "label": "解答・解説F",
+                    "label": "解説F",
                     "text": "#解答・解説F"
                   }
                 },
@@ -108,7 +108,7 @@
                   "type": "button",
                   "action": {
                     "type": "message",
-                    "label": "解答・解説G",
+                    "label": "解説G",
                     "text": "#解答・解説G"
                   }
                 },
@@ -116,7 +116,7 @@
                   "type": "button",
                   "action": {
                     "type": "message",
-                    "label": "解答・解説H",
+                    "label": "解説H",
                     "text": "#解答・解説H"
                   }
                 },
@@ -124,7 +124,7 @@
                   "type": "button",
                   "action": {
                     "type": "message",
-                    "label": "解答・解説I",
+                    "label": "解説I",
                     "text": "#解答・解説I"
                   }
                 },
@@ -132,7 +132,7 @@
                   "type": "button",
                   "action": {
                     "type": "message",
-                    "label": "解答・解説J",
+                    "label": "解説J",
                     "text": "#解答・解説J"
                   }
                 }
@@ -147,7 +147,7 @@
       },
       {
         "type": "bubble",
-        "size": "nano",
+        "size": "micro",
         "body": {
           "type": "box",
           "layout": "vertical",
@@ -160,7 +160,7 @@
                   "type": "button",
                   "action": {
                     "type": "message",
-                    "label": "解答・解説K",
+                    "label": "解説K",
                     "text": "#解答・解説K"
                   }
                 },
@@ -168,7 +168,7 @@
                   "type": "button",
                   "action": {
                     "type": "message",
-                    "label": "解答・解説L",
+                    "label": "解説L",
                     "text": "#解答・解説L"
                   }
                 },
@@ -176,7 +176,7 @@
                   "type": "button",
                   "action": {
                     "type": "message",
-                    "label": "解答・解説M",
+                    "label": "解説M",
                     "text": "#解答・解説M"
                   }
                 },
@@ -184,7 +184,7 @@
                   "type": "button",
                   "action": {
                     "type": "message",
-                    "label": "解答・解説N",
+                    "label": "解説N",
                     "text": "#解答・解説N"
                   }
                 },
@@ -192,8 +192,8 @@
                   "type": "button",
                   "action": {
                     "type": "message",
-                    "label": "解答・解説-最後の文書",
-                    "text": "#解答・解説-最後の文書"
+                    "label": "解説-最後の文書",
+                    "text": "#解説-最後の文書"
                   }
                 }
               ]
