@@ -65,5 +65,10 @@ webhook.post("*", async (c) => {
         [celebrateMessage],
       );
     }
+    if (messageEvent.message.text === "#解答・解説") {
+      await replyMessage(CHANNEL_ACCESS_TOKEN!, messageEvent.replyToken, [
+        JSON.parse(await Deno.readTextFile("./templates/answer.json")),
+      ]);
+    }
   }
 });

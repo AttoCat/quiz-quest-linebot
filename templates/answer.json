@@ -1,0 +1,202 @@
+{
+  "type": "flex",
+  "altText": "解答・解説一覧",
+  "contents": {
+    "type": "carousel",
+    "contents": [
+      {
+        "type": "bubble",
+        "size": "nano",
+        "header": {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "text",
+              "text": "解答・解説一覧",
+              "weight": "bold",
+              "size": "md",
+              "wrap": true
+            }
+          ],
+          "paddingBottom": "none"
+        },
+        "body": {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "box",
+              "layout": "vertical",
+              "contents": [
+                {
+                  "type": "button",
+                  "action": {
+                    "type": "message",
+                    "label": "台紙",
+                    "text": "#台紙"
+                  }
+                },
+                {
+                  "type": "button",
+                  "action": {
+                    "type": "message",
+                    "label": "解答・解説A",
+                    "text": "#解答・解説A"
+                  }
+                },
+                {
+                  "type": "button",
+                  "action": {
+                    "type": "message",
+                    "label": "解答・解説B",
+                    "text": "#解答・解説B"
+                  }
+                },
+                {
+                  "type": "button",
+                  "action": {
+                    "type": "message",
+                    "label": "解答・解説C",
+                    "text": "#解答C"
+                  }
+                },
+                {
+                  "type": "button",
+                  "action": {
+                    "type": "message",
+                    "label": "解答解説D",
+                    "text": "#解答・解説D"
+                  }
+                }
+              ]
+            }
+          ],
+          "spacing": "none",
+          "paddingAll": "0px",
+          "paddingBottom": "0px"
+        }
+      },
+      {
+        "type": "bubble",
+        "size": "nano",
+        "body": {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "box",
+              "layout": "vertical",
+              "contents": [
+                {
+                  "type": "button",
+                  "action": {
+                    "type": "message",
+                    "label": "解答・解説E",
+                    "text": "#解答・解説E"
+                  }
+                },
+                {
+                  "type": "button",
+                  "action": {
+                    "type": "message",
+                    "label": "解答・解説F",
+                    "text": "#解答・解説F"
+                  }
+                },
+                {
+                  "type": "button",
+                  "action": {
+                    "type": "message",
+                    "label": "解答・解説G",
+                    "text": "#解答・解説G"
+                  }
+                },
+                {
+                  "type": "button",
+                  "action": {
+                    "type": "message",
+                    "label": "解答・解説H",
+                    "text": "#解答・解説H"
+                  }
+                },
+                {
+                  "type": "button",
+                  "action": {
+                    "type": "message",
+                    "label": "解答・解説I",
+                    "text": "#解答・解説I"
+                  }
+                }
+              ]
+            }
+          ],
+          "spacing": "none",
+          "paddingAll": "0px",
+          "paddingBottom": "0px",
+          "paddingTop": "30px"
+        }
+      },
+      {
+        "type": "bubble",
+        "size": "nano",
+        "body": {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "box",
+              "layout": "vertical",
+              "contents": [
+                {
+                  "type": "button",
+                  "action": {
+                    "type": "message",
+                    "label": "解答・解説J",
+                    "text": "#解答・解説J"
+                  }
+                },
+                {
+                  "type": "button",
+                  "action": {
+                    "type": "message",
+                    "label": "解答・解説K",
+                    "text": "#解答・解説K"
+                  }
+                },
+                {
+                  "type": "button",
+                  "action": {
+                    "type": "message",
+                    "label": "解答・解説L",
+                    "text": "#解答・解説L"
+                  }
+                },
+                {
+                  "type": "button",
+                  "action": {
+                    "type": "message",
+                    "label": "解答・解説M",
+                    "text": "#解答・解説M"
+                  }
+                },
+                {
+                  "type": "button",
+                  "action": {
+                    "type": "message",
+                    "label": "解答・解説N",
+                    "text": "#解答・解説N"
+                  }
+                }
+              ]
+            }
+          ],
+          "spacing": "none",
+          "paddingAll": "0px",
+          "paddingBottom": "0px",
+          "paddingTop": "30px"
+        }
+      }
+    ]
+  }
+}
